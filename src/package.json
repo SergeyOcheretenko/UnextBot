@@ -1,0 +1,22 @@
+{
+  "name": "unextbot",
+  "version": "1.0.0",
+  "description": "Unext chat bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergeyOcheretenko/UnextBot.git"
+  },
+  "author": "SergeyOcheretenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SergeyOcheretenko/UnextBot/issues"
+  },
+  "homepage": "https://github.com/SergeyOcheretenko/UnextBot#readme",
+  "dependencies": {
+    "telegraf": "^4.6.0"
+  }
+}
