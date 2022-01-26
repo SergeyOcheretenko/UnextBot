@@ -1,6 +1,8 @@
 const { Telegraf } = require('telegraf');
 const data = require('./CONFIG.json');
-const { mathValidation, checkMathTeacher, ukrValidation, checkUkrTeacher } = require('./valid');
+const { mathValidation, checkMathTeacher, 
+    ukrValidation, checkUkrTeacher, 
+    engValidation, checkEngTeacher } = require('./valid');
 
 const bot = new Telegraf(data.token);
 
@@ -17,6 +19,10 @@ bot.on('message', (msg) => {
 
         if (ukrValidation(messageText)) {
             msg.telegram.sendMessage('-1001728399269', `${checkUkrTeacher(messageText)}\n\n${messageText}`);
+        }
+
+        if (engValidation(messageText)) {
+            msg.telegram.sendMessage('-1001457853319', `${checkEngTeacher(messageText)}\n\n${messageText}`);
         }
     }
     // console.log(msg.message.text);
