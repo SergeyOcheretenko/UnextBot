@@ -12,6 +12,7 @@
   },
   "author": "SergeyOcheretenko",
   "license": "MIT",
+  "start": "node bot.js",
   "bugs": {
     "url": "https://github.com/SergeyOcheretenko/UnextBot/issues"
   },
