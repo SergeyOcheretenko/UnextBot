@@ -1,6 +1,6 @@
-const teachers = require('./teachers.json');
-const teachersUkr = require('./teachersUkr.json');
-const teachersEng = require('./teachersEng.json');
+const teachersMath = require('./json/teachersMath.json');
+const teachersEng = require('./json/teachersEng.json');
+const teachersUkr = require('./json/teachersUkr.json');
 
 const checkKeyWord = (text) => {
     const keyWords = [
@@ -30,6 +30,16 @@ const mathValidation = (text) => {
     return false;
 };
 
+const checkMathTeacher = (text) => {
+    for (const teacher in teachersMath) {
+        for (const group of teachersMath[teacher]) {
+            if (text.includes(group)) return teacher;
+        }
+    }
+
+    return undefined;
+}
+
 const ukrValidation = (text) => {
     if (!checkKeyWord(text)) return false;
 
@@ -41,16 +51,6 @@ const ukrValidation = (text) => {
 
     return false;
 };
-
-const checkMathTeacher = (text) => {
-    for (const teacher in teachers) {
-        for (const group of teachers[teacher]) {
-            if (text.includes(group)) return teacher;
-        }
-    }
-
-    return undefined;
-}
 
 const checkUkrTeacher = (text) => {
     for (const teacher in teachersUkr) {
